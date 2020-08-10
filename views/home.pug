@@ -1,0 +1,12 @@
+extends layouts/main.pug
+include mixins/videoBlock
+
+block content 
+    div.home-videos
+        each item in videos
+            +videoBlock({
+                title:item.title,
+                id:item.id,
+                views:item.views,
+                videoUrl:item.videoUrl              
+            })
